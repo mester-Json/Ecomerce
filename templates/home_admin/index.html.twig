@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeAdminController!
+{% endblock %}
+
+{% block body %}
+	{% include 'header.html.twig' %}
+
+	<h1>Liste des livres</h1>
+
+
+	{% for book in books %}
+		<h3>Article :
+		</h3>
+		<p>{{ Produits.name }}</p>
+		<h3>price :
+		</h3>
+		<p>{{ Produits.price }}</p>
+		<a href="{{ path('produits_detail', {'id': Produits.id}) }}" class="btn btn-primary">Voir le livre</a>
+
+	{% else %}
+		<li>Aucun Produits  trouvé.</li>
+	{% endfor %}
+{% endblock %}

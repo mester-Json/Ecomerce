@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+	<h1>Liste des Produits</h1>
+
+
+	{% for produit in Produits %}
+		<h3>Article :
+		</h3>
+		<p>{{ Produits.name }}</p>
+		<h3>price :
+		</h3>
+		<p>{{ Produits.price }}</p>
+		<a href="{{ path('produits_detail', {'id': Produits.id}) }}" class="btn btn-primary">Voir le livre</a>
+
+	{% else %}
+		<li>Aucun Produits  trouvé.</li>
+	{% endfor  %}
+{% endblock %}
